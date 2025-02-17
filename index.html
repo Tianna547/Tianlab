@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tianlab - 田宇辉实验室</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="header-title">Tianlab - 田宇辉实验室</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" id="nav-home">首页</a></li>
+                <li><a href="#research" id="nav-research">研究方向</a></li>
+                <li><a href="#team" id="nav-team">团队成员</a></li>
+                <li><a href="#publications" id="nav-publications">发表论文</a></li>
+                <li><a href="#news" id="nav-news">新闻与活动</a></li>
+                <li><a href="#contact" id="nav-contact">联系我们</a></li>
+            </ul>
+        </nav>
+        <div>
+            <button onclick="changeLanguage('zh')">中文</button>
+            <button onclick="changeLanguage('en')">English</button>
+        </div>
+    </header>
+
+    <section id="home">
+        <h2 id="home-title">欢迎来到田宇辉实验室</h2>
+        <p id="home-content">我们致力于...</p>
+    </section>
+
+    <section id="research">
+        <h2 id="research-title">研究方向</h2>
+        <p id="research-content">我们的研究主要集中在...</p>
+    </section>
+
+    <section id="team">
+        <h2 id="team-title">团队成员</h2>
+        <div class="team-member">
+            <img src="images/tianyu.jpg" alt="田宇辉">
+            <h3>田宇辉</h3>
+            <p>实验室主任</p>
+        </div>
+        <!-- 其他成员 -->
+    </section>
+
+    <section id="publications">
+        <h2 id="publications-title">发表论文</h2>
+        <ul id="publications-list">
+            <li>论文1</li>
+            <li>论文2</li>
+        </ul>
+    </section>
+
+    <section id="news">
+        <h2 id="news-title">新闻与活动</h2>
+        <ul id="news-list">
+            <li>新闻1</li>
+            <li>新闻2</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2 id="contact-title">联系我们</h2>
+        <p id="contact-address">地址: ...</p>
+        <p id="contact-phone">电话: ...</p>
+        <p id="contact-email">邮箱: ...</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Tianlab. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // 中英文内容
+        const content = {
+            zh: {
+                headerTitle: "Tianlab - 田宇辉实验室",
+                navHome: "首页",
+                navResearch: "研究方向",
+                navTeam: "团队成员",
+                navPublications: "发表论文",
+                navNews: "新闻与活动",
+                navContact: "联系我们",
+                homeTitle: "欢迎来到田宇辉实验室",
+                homeContent: "我们致力于...",
+                researchTitle: "研究方向",
+                researchContent: "我们的研究主要集中在...",
+                teamTitle: "团队成员",
+                publicationsTitle: "发表论文",
+                publicationsList: ["论文1", "论文2"],
+                newsTitle: "新闻与活动",
+                newsList: ["新闻1", "新闻2"],
+                contactTitle: "联系我们",
+                contactAddress: "地址: ...",
+                contactPhone: "电话: ...",
+                contactEmail: "邮箱: ..."
+            },
+            en: {
+                headerTitle: "Tianlab - Tian Yuhui's Lab",
+                navHome: "Home",
+                navResearch: "Research",
+                navTeam: "Team",
+                navPublications: "Publications",
+                navNews: "News & Events",
+                navContact: "Contact",
+                homeTitle: "Welcome to Tianlab",
+                homeContent: "We are dedicated to...",
+                researchTitle: "Research",
+                researchContent: "Our research focuses on...",
+                teamTitle: "Team Members",
+                publicationsTitle: "Publications",
+                publicationsList: ["Paper 1", "Paper 2"],
+                newsTitle: "News & Events",
+                newsList: ["News 1", "News 2"],
+                contactTitle: "Contact Us",
+                contactAddress: "Address: ...",
+                contactPhone: "Phone: ...",
+                contactEmail: "Email: ..."
+            }
+        };
+
+        // 切换语言
+        function changeLanguage(lang) {
+            const data = content[lang];
+            document.getElementById('header-title').innerText = data.headerTitle;
+            document.getElementById('nav-home').innerText = data.navHome;
+            document.getElementById('nav-research').innerText = data.navResearch;
+            document.getElementById('nav-team').innerText = data.navTeam;
+            document.getElementById('nav-publications').innerText = data.navPublications;
+            document.getElementById('nav-news').innerText = data.navNews;
+            document.getElementById('nav-contact').innerText = data.navContact;
+            document.getElementById('home-title').innerText = data.homeTitle;
+            document.getElementById('home-content').innerText = data.homeContent;
+            document.getElementById('research-title').innerText = data.researchTitle;
+            document.getElementById('research-content').innerText = data.researchContent;
+            document.getElementById('team-title').innerText = data.teamTitle;
+            document.getElementById('publications-title').innerText = data.publicationsTitle;
+            document.getElementById('publications-list').innerHTML = data.publicationsList.map(item => `<li>${item}</li>`).join('');
+            document.getElementById('news-title').innerText = data.newsTitle;
+            document.getElementById('news-list').innerHTML = data.newsList.map(item => `<li>${item}</li>`).join('');
+            document.getElementById('contact-title').innerText = data.contactTitle;
+            document.getElementById('contact-address').innerText = data.contactAddress;
+            document.getElementById('contact-phone').innerText = data.contactPhone;
+            document.getElementById('contact-email').innerText = data.contactEmail;
+        }
+
+        // 默认加载中文
+        changeLanguage('zh');
+    </script>
+</body>
+</html>
